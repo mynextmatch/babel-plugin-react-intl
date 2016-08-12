@@ -8,6 +8,7 @@ import * as p from 'path';
 import {writeFileSync} from 'fs';
 import {sync as mkdirpSync} from 'mkdirp';
 import printICUMessage from './print-icu-message';
+import nodePath from 'path';
 
 const COMPONENT_NAMES = [
     'FormattedMessage',
@@ -126,7 +127,12 @@ export default function () {
             );
         }
 
-        reactIntl.messages.set(id, {id, description, defaultMessage});
+        reactIntl.messages.set(id, {
+            id,
+            description, 
+            defaultMessage, 
+            component: nodePath.basename(path.hub.file.opts.filename
+        )});
     }
 
     function referencesImport(path, mod, importedNames) {
