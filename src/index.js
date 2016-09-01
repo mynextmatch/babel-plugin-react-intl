@@ -128,9 +128,9 @@ export default function () {
         }
 
         reactIntl.messages.set(id, {
-            id,
+            item_code: id,
             description, 
-            defaultMessage, 
+            translation: defaultMessage, 
             component: nodePath.basename(path.hub.file.opts.filename
         )});
     }
