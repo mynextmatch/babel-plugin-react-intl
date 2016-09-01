@@ -128,6 +128,7 @@ export default function () {
         }
 
         reactIntl.messages.set(id, {
+            id,
             item_code: id,
             description, 
             translation: defaultMessage, 
